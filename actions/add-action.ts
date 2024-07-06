@@ -51,7 +51,7 @@ export const addAction = async (formData: FormData) => {
       token: process.env.BLOB_READ_WRITE_TOKEN!,
     });
 
-    pc.index("image-search").upsert([
+    await pc.index("image-search").upsert([
       {
         id: uid(),
         metadata: {
@@ -63,7 +63,7 @@ export const addAction = async (formData: FormData) => {
       },
     ]);
 
-    return JSON.stringify({ url });
+    return JSON.stringify({ url, imageDescription, vector });
   } catch (error) {
     // @ts-ignore
     return JSON.stringify({ error: error.message });
