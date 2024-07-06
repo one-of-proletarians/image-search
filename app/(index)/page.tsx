@@ -16,10 +16,11 @@ export const deleteAction = async (id: string, url: string) => {
   "use server";
 
   await index.deleteOne(id);
-  await del(url);
+  await del(url, { token: process.env.BLOB_READ_WRITE_TOKEN! });
 };
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function Home() {
   const { vectors = [] } = await index.listPaginated();
