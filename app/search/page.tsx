@@ -13,6 +13,9 @@ interface Props {
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function Search({ searchParams }: Props) {
   const input = searchParams.q;
   if (!input) {
