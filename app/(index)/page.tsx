@@ -29,7 +29,7 @@ export default async function Home() {
   if (!ids.length)
     return (
       <div className="w-full h-full flex items-center justify-center">
-        <h1 className="text-3xl font-bold">No results {ids.toString()}</h1>
+        <h1 className="text-3xl font-bold">No results</h1>
       </div>
     );
 
@@ -41,7 +41,6 @@ export default async function Home() {
 
   return (
     <section>
-      {JSON.stringify(ids, null, 2)}
       <ul className="flex flex-col gap-4">
         {list.map((r) => (
           <Item key={r.id} r={r} deleteAction={deleteAction} />
