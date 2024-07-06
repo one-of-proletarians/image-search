@@ -48,6 +48,7 @@ export const addAction = async (formData: FormData) => {
 
     const { url } = await put("images/" + file.name, file, {
       access: "public",
+      token: process.env.BLOB_READ_WRITE_TOKEN!,
     });
 
     pc.index("image-search").upsert([
