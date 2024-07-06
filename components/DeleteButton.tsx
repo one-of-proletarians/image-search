@@ -24,7 +24,7 @@ export const DeleteButton: FC<DeleteButtonProps> = ({ action, id, url }) => {
       onClick={async () => {
         setPending(true);
         await sleep(500);
-        action(id, url).then(router.refresh);
+        action(id, url).finally(router.refresh);
       }}
     >
       {pending ? (
