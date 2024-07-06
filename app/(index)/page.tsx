@@ -19,6 +19,8 @@ export const deleteAction = async (id: string, url: string) => {
   await del(url);
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const { vectors = [] } = await index.listPaginated();
   const ids = vectors.map((v) => v.id);
