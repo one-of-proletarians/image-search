@@ -64,6 +64,6 @@ export const addAction = async (formData: FormData) => {
 
     return JSON.stringify({ url });
   } catch (error) {
-    return JSON.stringify({ error });
+    return JSON.stringify({ error: error.message });
   }
 };
