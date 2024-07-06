@@ -1,5 +1,3 @@
-"use server";
-
 import { Item } from "@/components/Item";
 import { Pinecone } from "@pinecone-database/pinecone";
 import { redirect } from "next/navigation";
