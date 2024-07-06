@@ -1,4 +1,3 @@
-import { DeleteButton } from "@/components/DeleteButton";
 import { Item } from "@/components/Item";
 import { Pinecone } from "@pinecone-database/pinecone";
 import { del } from "@vercel/blob";
@@ -39,6 +38,7 @@ export default async function Home() {
 
   return (
     <section>
+      {JSON.stringify(ids, null, 2)}
       <ul className="flex flex-col gap-4">
         {list.map((r) => (
           <Item key={r.id} r={r} deleteAction={deleteAction} />
